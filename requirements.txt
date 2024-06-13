@@ -1,3 +1,4 @@
 scrapy
 scrapy-splash
 scrapy-playwright
+scrapy-user-agents
