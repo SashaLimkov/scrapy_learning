@@ -1,3 +1,4 @@
+from scrapy_user_agents.middlewares import RandomUserAgentMiddleware
 # Scrapy settings for chocolate_scraper project
 #
 # For simplicity, this file contains only settings considered important or
@@ -50,9 +51,11 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
+DOWNLOADER_MIDDLEWARES = {
 #    "chocolate_scraper.middlewares.ChocolateScraperDownloaderMiddleware": 543,
-#}
+    "scrapy.downloadermiddlewares.useragent.UserAgentMiddleware":None,
+    "scrapy_user_agents.middlewares.RandomUserAgentMiddleware": 400,
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
