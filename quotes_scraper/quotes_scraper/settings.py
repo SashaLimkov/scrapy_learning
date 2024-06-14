@@ -18,10 +18,10 @@ NEWSPIDER_MODULE = "quotes_scraper.spiders"
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
-# DOWNLOAD_HANDLERS = {
-#     "http" : "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
-#     "https" : "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler"
-# }
+DOWNLOAD_HANDLERS = {
+    "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+    "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+}
 
 # TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 # Configure maximum concurrent requests performed by Scrapy (default: 16)

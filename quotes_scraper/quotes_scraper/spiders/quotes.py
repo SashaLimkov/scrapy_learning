@@ -5,11 +5,10 @@ from quotes_scraper.items import QuotesItem
 
 class QuotesSpider(scrapy.Spider):
     name = "quotes"
-    allowed_domains = ["quotes.toscrape.com"]
-    start_urls = ["https://quotes.toscrape.com"]
+    # start_urls = ["https://quotes.toscrape.com"]
 
     def start_requests(self):
-        url = "https://quotes.toscrape.com"
+        url = "https://quotes.toscrape.com/js/"
         yield scrapy.Request(url, meta={"playwright":True})
         
         
