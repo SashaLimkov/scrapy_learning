@@ -12,3 +12,7 @@ class QuoteLoader(ItemLoader):
     author_link_in =  MapCompose(lambda x : "https://quotes.toscrape.com" + x)
     tags_in = MapCompose(tag_linker)
     
+
+class QuoteJSLoader(ItemLoader):
+    default_output_processor = TakeFirst()
+    

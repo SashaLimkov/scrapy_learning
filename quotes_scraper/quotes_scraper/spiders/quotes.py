@@ -5,14 +5,15 @@ from quotes_scraper.items import QuotesItem
 
 class QuotesSpider(scrapy.Spider):
     name = "quotes"
-    # start_urls = ["https://quotes.toscrape.com"]
+    start_urls = ["https://quotes.toscrape.com"]
 
-    def start_requests(self):
-        url = "https://quotes.toscrape.com/js/"
-        yield scrapy.Request(url, meta={"playwright":True})
+    # def start_requests(self):
+    #     url = "https://quotes.toscrape.com/"
+    #     yield scrapy.Request(url, meta={"playwright":True})
         
         
     def parse(self, response):
+        print(response.css("div.quote"))
         for quote in response.css("div.quote"):
             quote_item = QuoteLoader(item=QuotesItem(), selector=quote)
             quote_item.add_css("quote",  "span.text ::text")

@@ -11,3 +11,10 @@ class QuotesItem(scrapy.Item):
     author = scrapy.Field()
     author_link = scrapy.Field()
     tags = scrapy.Field()
+
+
+
+class QuotesJSItem(scrapy.Item):
+    quote = scrapy.Field()
+    author = scrapy.Field()
+    tags = scrapy.Field()
